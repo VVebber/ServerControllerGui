@@ -1,0 +1,10 @@
+@import './css/base.css';
+
+:root {
+    --main-header-bg: #1E293B;
+
+
+    --gradient-active: linear-gradient(135deg, #028a0f, #77ff6d);   /* зелёный → светло-зелёный */
+    --gradient-error: linear-gradient(135deg, #d60000, #fb5f5f);   /* красный → светло-красный */
+    --gradient-warning: linear-gradient(135deg, #f6b709, #f8e164); /* жёлтый → светло-жёлтый */
+}
