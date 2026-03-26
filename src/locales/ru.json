@@ -1,0 +1,419 @@
+{
+  "header": {
+    "exit": "Выход",
+    "menu": {
+      "scripts": "Скрипты",
+      "settings": "Настройки"
+    }
+  },
+  "ScriptsHub": {
+    "os": {
+      "windows": "Windows",
+      "macos": "MacOS",
+      "linux": "Linux"
+    },
+    "tutorials": [
+      {
+        "title": "WinRM",
+        "description": "Скрипт позволяет настроить удалённый доступ к Windows",
+        "download": {
+          "url": "http://192.168.1.58/files?OS=Windows&fileName=WinRM.ps1",
+          "filename": "WinRM"
+        },
+        "instructions": [
+          "Скачайте скрипт на свой компьютер.",
+          "Запустите скрипт от имени администратора (PowerShell → 'Запуск от имени администратора').",
+          "Подождите, пока скрипт выполнится. Скрипт создаст необходимые настройки для WinRM.",
+          "После выполнения скрипта вы увидите лог или файл с результатом (например, setup_winrm.log).",
+          "При желании вы можете загрузить файл результата обратно на сайт для проверки или отображения."
+        ],
+        "note": "После запуска скрипта не забудьте загрузить его результат обратно на сайт."
+      },
+      {
+        "title": "SSH ",
+        "description": "Скрипт позволяет настроить удалённый доступ к устройствам через SSH",
+        "download": {
+          "url": "",
+          "filename": ""
+        },
+        "instructions": [
+          "Скачайте скрипт на свой компьютер.",
+          "Запустите скрипт с правами, необходимыми для настройки SSH на устройстве.",
+          "После выполнения скрипта проверьте соединение через SSH.",
+          "При желании загрузите лог выполнения скрипта на сайт для проверки."
+        ],
+        "note": "Не забудьте проверить, что порт SSH доступен и настройки применены."
+      },
+      {
+        "title": "SNMP ",
+        "description": "Скрипт позволяет настроить SNMP доступ для мониторинга устройств",
+        "download": {
+          "url": "",
+          "filename": ""
+        },
+        "instructions": [
+          "Скачайте скрипт на устройство.",
+          "Запустите скрипт с необходимыми правами (например, root или администратор).",
+          "Настройте community string или учетные данные для SNMP v3.",
+          "После выполнения скрипта проверьте доступ через SNMP.",
+          "При желании загрузите лог выполнения на сайт."
+        ],
+        "note": "SNMP должен быть доступен на устройстве для успешного мониторинга."
+      }
+    ]
+  },
+  "DeviceInfo": {
+    "monitor": "wdad",
+    "status": {
+      "online": "Онлайн",
+      "offline": "Не онлайн",
+      "error": "Ошибка"
+    },
+    "DeviceDetailsPanel": {
+      "OperatingSystem": {
+        "description": "Информация об операционной системе",
+
+        "version": "Версия",
+        "architecture": "Архитектура",
+        "hostname": "Имя компьютера",
+        "build": "Номер сборки",
+
+        "sectionTitle": "Системная информация",
+
+        "manufacturer": "Производитель",
+        "serialNumber": "Серийный номер",
+        "systemDrive": "Системный диск",
+        "windowsDirectory": "Каталог Windows",
+
+        "installDate": "Дата установки",
+        "lastBootTime": "Последней обновление"
+      },
+      "ComputerSystemProduct": {
+        "version": "Версия",
+        "identifyingNumber": "ID устройства",
+        "uuid": "UUID",
+        "skuNumber": "SKU",
+
+        "sectionTitle": "Дополнительно",
+
+        "caption": "Описание",
+        "vendor": "Производитель"
+      },
+      "DeviceSystem": {
+        "description": "Информация о системе",
+        "status": "Статус",
+
+        "manufacturer": "Производитель",
+        "systemType": "Тип системы",
+        "processors": "Процессоры",
+        "logicalCores": "Логические ядра",
+
+        "sectionTitle": "Основные данные",
+
+        "memory": "Память",
+        "dnsHostname": "DNS имя",
+        "primaryOwner": "Основной владелец",
+        "caption": "Описание",
+
+        "networkSectionTitle": "Сеть и окружение",
+
+        "domain": "Домен",
+        "workgroup": "Рабочая группа",
+        "partOfDomain": "В домене",
+        "hypervisor": "Гипервизор"
+      },
+      "Bios": {
+        "description": "Информация о BIOS",
+        "status": "Статус",
+
+        "manufacturer": "Производитель",
+        "version": "Версия",
+        "smbios": "SMBIOS",
+        "release": "Дата выпуска",
+
+        "sectionTitle": "Дополнительно",
+
+        "serialNumber": "Серийный номер",
+        "name": "Название",
+
+        "ok": "OK",
+        "warning": "Предупреждение",
+        "error": "Ошибка"
+      },
+      "BaseBoard": {
+        "description": "Информация о материнской плате",
+
+        "manufacturer": "Производитель",
+        "version": "Версия",
+        "serialNumber": "Серийный номер",
+        "tag": "Тег",
+
+        "sectionTitle": "Состояние",
+
+        "poweredOn": "Питание",
+        "hostingBoard": "Основная плата",
+        "hotSwappable": "Горячая замена",
+        "removable": "Съемная",
+        "replaceable": "Заменяемая",
+        "requiresDaughterBoard": "Дочерняя плата",
+
+        "descriptionLabel": "Описание",
+        "product": "Продукт",
+        "status": "Статус",
+
+        "yes": "Да",
+        "no": "Нет",
+        "active": "Активна",
+        "ok": "OK"
+      },
+      "PagefileUsage": {
+        "description": "Информация о файле подкачки",
+
+        "allocatedBaseSize": "Выделено",
+        "currentUsage": "Текущее использование",
+        "peakUsage": "Пиковое использование",
+        "tempPageFile": "Временный",
+
+        "usage": "Использование",
+        "sectionTitle": "Дополнительно",
+
+        "caption": "Описание",
+        "installDate": "Дата установки",
+
+        "normal": "Нормально",
+        "warning": "Высокая нагрузка",
+        "yes": "Да",
+        "no": "Нет"
+      },
+      "Processor": {
+        "description": "Информация о процессоре",
+
+        "load": "Загрузка",
+        "manufacturer": "Производитель",
+        "socket": "Сокет",
+        "maxClockSpeed": "Макс. частота",
+        "currentClockSpeed": "Текущая частота",
+
+        "loadSectionTitle": "Текущая загрузка CPU",
+        "sectionTitle": "Характеристики",
+
+        "cores": "Ядра",
+        "logicalProcessors": "Логические процессоры",
+        "threadCount": "Потоки",
+        "architecture": "Архитектура",
+        "addressWidth": "Разрядность",
+
+        "virtualization": "Виртуализация",
+        "vmMonitorModeExtensions": "VM Monitor",
+
+        "enabled": "Включено",
+        "disabled": "Отключено",
+        "supported": "Поддерживается",
+        "notSupported": "Не поддерживается"
+      },
+      "PhysicalMemory": {
+        "description": "Информация об оперативной памяти",
+
+        "manufacturer": "Производитель",
+        "memoryType": "Тип памяти",
+        "speed": "Скорость",
+        "configuredSpeed": "Настроенная скорость",
+
+        "sectionTitle": "Дополнительно",
+
+        "deviceLocator": "Слот",
+        "serialNumber": "Серийный номер",
+        "partNumber": "Номер детали"
+      },
+      "DiskDrive": {
+        "description": "Информация о диске",
+
+        "size": "Размер",
+        "interfaceType": "Интерфейс",
+        "mediaType": "Тип носителя",
+        "partitions": "Разделы",
+
+        "sectionTitle": "Основные данные",
+
+        "manufacturer": "Производитель",
+        "firmwareRevision": "Прошивка",
+        "serialNumber": "Серийный номер",
+        "bytesPerSector": "Байт на сектор",
+        "mediaLoaded": "Носитель загружен",
+
+        "capabilitiesTitle": "Возможности",
+
+        "diskIndex": "Индекс диска",
+        "deviceDiskId": "ID диска",
+
+        "yes": "Да",
+        "no": "Нет"
+      },
+      "LogicalDisk": {
+        "description": "Информация о логическом диске",
+
+        "volumeName": "Имя тома",
+        "driveType": "Тип диска",
+        "diskId": "ID диска",
+        "serialNumber": "Серийный номер",
+
+        "usageTitle": "Использование диска",
+        "totalSize": "Общий объем",
+        "freeSpace": "Свободно",
+        "usedSpace": "Использовано",
+        "fileSystem": "Файловая система",
+
+        "sectionTitle": "Состояние и возможности",
+
+        "compressed": "Сжатие",
+        "supportsDiskQuotas": "Квоты диска",
+        "supportsFileBasedCompression": "Сжатие файлов",
+        "volumeDirty": "Том поврежден",
+
+        "yes": "Да",
+        "no": "Нет"
+      },
+      "VideoController": {
+        "description": "Информация о видеоадаптере",
+
+        "videoProcessor": "Видеопроцессор",
+        "adapterRAM": "Видеопамять",
+        "adapterCompatibility": "Адаптер",
+        "adapterDACType": "Тип DAC",
+
+        "sectionTitle": "Драйвер",
+
+        "driverVersion": "Версия драйвера",
+        "driverDate": "Дата драйвера",
+
+        "resolutionSectionTitle": "Разрешение",
+        "videoModeDescription": "Видеорежим",
+        "pnpDeviceId": "PNP ID",
+
+        "noData": "Нет данных"
+      },
+      "NetworkAdapter": {
+        "description": "Информация о сетевом адаптере",
+
+        "manufacturer": "Производитель",
+        "adapterType": "Тип адаптера",
+        "speed": "Скорость",
+        "macAddress": "MAC-адрес",
+
+        "sectionTitle": "Дополнительно",
+
+        "connectionId": "Подключение",
+        "interfaceIndex": "Индекс интерфейса",
+        "serviceName": "Имя службы",
+        "lastReset": "Последний сброс",
+
+        "stateSectionTitle": "Состояние",
+
+        "enabled": "Включен",
+        "physical": "Физический",
+        "virtual": "Виртуальный",
+        "activeLink": "Активное подключение",
+
+        "connected": "Подключен",
+        "disconnected": "Отключен",
+        "yes": "Да",
+        "no": "Нет"
+      },
+      "NetworkAdapterConfiguration": {
+        "description": "Конфигурация сетевого адаптера",
+
+        "ipEnabled": "IP включен",
+        "macAddress": "MAC-адрес",
+        "serviceName": "Сервис",
+        "dnsHostName": "DNS хост",
+        "dhcpServer": "DHCP сервер",
+
+        "sectionTitle": "Сетевые параметры",
+
+        "ipAddress": "IP-адрес",
+        "ipSubnet": "Подсеть",
+        "defaultIpGateway": "Шлюз",
+        "dnsServerSearchOrder": "DNS серверы",
+
+        "optionsTitle": "Опции",
+
+        "dhcpEnabled": "DHCP",
+        "fullDnsRegistrationEnabled": "Полная DNS регистрация",
+        "domainDnsRegistrationEnabled": "DNS регистрация домена",
+        "ipActive": "IP активен",
+
+        "yes": "Да",
+        "no": "Нет",
+        "enabled": "Включено",
+        "disabled": "Выключено"
+      },
+      "UserAccount": {
+        "description": "Информация об учетной записи",
+
+        "fullName": "Полное имя",
+        "domain": "Домен",
+        "accountType": "Тип учетной записи",
+        "sid": "SID",
+
+        "sectionTitle": "Безопасность",
+
+        "passwordRequired": "Требуется пароль",
+        "passwordChangeable": "Можно изменить пароль",
+        "passwordExpires": "Срок пароля истекает",
+        "lockout": "Заблокирована",
+
+        "descriptionLabel": "Описание",
+        "status": "Статус",
+
+        "local": "Локальная",
+        "enabled": "Активна",
+        "disabled": "Отключена",
+        "locked": "Заблокирована",
+        "yes": "Да",
+        "no": "Нет",
+        "admin": "Администратор",
+        "user": "Пользователь"
+      },
+      "Group": {
+        "description": "Информация о группе",
+
+        "domain": "Домен",
+        "status": "Статус",
+        "sidType": "Тип SID",
+        "caption": "Описание",
+
+        "sectionTitle": "Дополнительно",
+
+        "sid": "SID",
+        "accountType": "Тип учетной записи",
+        "descriptionLabel": "Описание",
+
+        "local": "Локальная",
+        "domainAccount": "Доменная",
+        "unknown": "Неизвестно",
+        "alias": "Псевдоним",
+        "group": "Группа",
+        "user": "Пользователь"
+      },
+      "Share": {
+        "description": "Информация об общих ресурсах",
+
+        "type": "Тип",
+        "usersLimit": "Лимит пользователей",
+        "allowMaximum": "Максимальный доступ",
+        "maximumAllowed": "Максимум подключений",
+
+        "sectionTitle": "Параметры доступа",
+
+        "caption": "Название",
+        "shareDescription": "Описание",
+        "path": "Путь",
+        "status": "Статус",
+
+        "unlimited": "Без ограничений",
+        "yes": "Да",
+        "no": "Нет"
+      }
+    }
+  }
+}

@@ -1,0 +1,145 @@
+
+* {
+  margin: 0;
+  padding: 0;
+
+  /* outline: 1px solid red; */
+}
+
+:root {
+  /* Header */
+  --header-bg: #0d1115;
+  --header-fg:  #ffffff;
+  --height-header: 70px;
+
+  --header-control-bg: #1b1d22;
+  --header-control-fg: #ffffff;
+  --header-control-px: 0.25rem;
+  --header-control-py: 0.5rem;
+  --header-control-border-color: rgba(255, 255, 255, 0.15);
+  --header-control-shadow: 2px 2px 2px 1px rgba(255, 250, 255, 0.05);
+  --header-control-radius: 30% 15%;
+  --header-control-transition: 0.2s ease;
+
+  --header-control-hover-bg: rgba(255, 255, 255, 0.12);
+  --header-control-hover-translate: -1px;
+  --header-control-hover-shadow: 0 20px 10px rgba(0, 0, 0, 0.05);
+
+  --header-exit-radius: 15% 7%;
+  --header-exit-padding-y: 0.3rem;
+  --header-exit-padding-x: 0.5rem;
+
+
+  --font-size: 0.875rem;
+
+  --field-border-radius: 0.3rem;
+  --field-placeholder: #888888;
+  --field-gap: 0.5rem;
+
+  --button-border-radius: 0.25rem;
+  --button-bg-hover: #293449;
+
+  --icon-filter-size: 18px;
+  --icon-search-size: 18px;
+}
+
+.footer-dates {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #64748b;
+  margin-top: 10px;
+}
+
+header {
+
+  height: var(--height-header);
+
+  color: var(--header-fg);
+  background-color: var(--header-bg);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 2rem;
+
+  gap: 2rem
+}
+
+@media (max-width: 768px) {
+  header {
+    gap: 1rem;
+    padding: 0 0.5rem;
+  }
+
+}
+
+@media (max-width: 1024px) {
+  header {
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+}
+
+section {
+  padding: 1rem;
+  /* todo?  */
+  background: #151a20;
+
+  height: calc(100vh - var(--height-header) - 2rem);
+}
+
+.flex {
+  display: flex;
+}
+
+.status {
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  white-space: nowrap;
+
+  background: rgba(34, 197, 94, 0.15);
+  color: #86efac;
+
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+}
+
+.flex-between-start {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.relative {
+  position: relative;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: currentColor;
+}
+
+.dark-card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, .06), rgba(255, 255, 255, .03));
+  color: rgba(255, 255, 255, .92);
+
+  padding: 1rem;
+
+  margin: 0.5rem 0;
+
+  border: 1px solid rgba(255, 255, 255, .08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .35);
+  border-radius: 14px;
+}
