@@ -22,34 +22,6 @@ export default {
             { key: 'computerSystemProduct', label: 'Устройство' },
             { key: 'pagefileUsage', label: 'Файл подкачки' }
           ]
-        },
-        {
-          key: 'hardware',
-          label: 'Железо',
-          items: [
-            { key: 'processor', label: 'CPU' },
-            { key: 'physicalMemory', label: 'RAM' },
-            { key: 'diskDrive', label: 'Диски' },
-            { key: 'logicalDisk', label: 'Разделы' },
-            { key: 'videoController', label: 'Видео' }
-          ]
-        },
-        {
-          key: 'network',
-          label: 'Сеть',
-          items: [
-            { key: 'networkAdapter', label: 'Адаптеры' },
-            { key: 'networkAdapterConfiguration', label: 'IP/DNS' }
-          ]
-        },
-        {
-          key: 'accounts',
-          label: 'Пользователи',
-          items: [
-            { key: 'userAccount', label: 'Учетки' },
-            { key: 'group', label: 'Группы' },
-            { key: 'share', label: 'Шары' }
-          ]
         }
       ]
     }

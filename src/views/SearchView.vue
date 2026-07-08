@@ -1,12 +1,10 @@
 <script>
-
 import OsFilters from '@/components/SearchView/OsFilters.vue'
 import StatusFliters from '@/components/SearchView/StatusFilter.vue'
 import CidrFilter from '@/components/SearchView/CidrFilter.vue'
 
 import DeviceCard from '@/components/SearchView/DeviceCard.vue'
-import { searchDevices } from '@/api/search.api';
-
+import { searchDevices } from '@/api/search.api'
 
 export default {
   name: 'SearchView',
@@ -18,14 +16,22 @@ export default {
         status: [],
         os: [],
         cidr: [],
-        protocol: []
+        protocol: [],
       },
-      devices: []
+      devices: [],
+      total: 0,
+      totalPages: 1,
+
+      page: 1,
     }
   },
   methods: {
     async fetchDevices() {
-      this.devices = await searchDevices(this.filters)
+      const res = await searchDevices(this.filters, this.page, 7)
+
+      this.devices = res.items
+      this.total = res.total
+      this.totalPages = res.totalPages
     },
 
     upsertFilters(arr, value) {
@@ -36,49 +42,72 @@ export default {
       } else {
         arr.splice(index, 1)
       }
+
+      this.fetchDevices()
     },
 
     onOsFilter(value) {
       this.upsertFilters(this.filters.os, value)
     },
+
     onStatusFilter(value) {
       this.upsertFilters(this.filters.status, value)
-    }
+    },
+
+    onCidrFilter(value) {
+      this.upsertFilters(this.filters.cidr, value)
+    },
+    nextPage() {
+      if (this.page < this.totalPages) {
+        this.page++
+        this.fetchDevices()
+      }
+    },
+    prevPage() {
+      if (this.page > 1) {
+        this.page--
+        this.fetchDevices()
+      }
+    },
   },
   async mounted() {
-    this.fetchDevices();
-  }
+    this.fetchDevices()
+  },
 }
-
 </script>
 
 <template>
   <section>
     <div class="search-layout">
-      <div class="search-main">
-
-        <div class="page-intro dark-card">
+      <div>
+        <div class="dark-card header-padding">
           <p class="page-overline">Поиск устройств</p>
         </div>
 
-        <div class="results-block dark-card">
-          <div class="results-head">
-            <p class="results-title">Результаты поиска</p>
-            <span class="status">4 устройства</span>
+        <div class="dark-card">
+          <div class="flex-between-start">
+            <p>Результаты поиска</p>
+            <span class="status">{{ total }} устройства</span>
           </div>
 
-          <div class="device-list">
-            <DeviceCard v-for="item in devices" :key="item.device_id" />
+          <div class="device-list" v-if="devices">
+            <DeviceCard v-for="item in devices" :key="item" :deviceData="item" />
           </div>
 
-          {{ devices }}
+          <div class="pagination">
+            <button class="page-btn" @click="prevPage" :disabled="page === 1">← Назад</button>
+
+            <span class="page-info"> {{ page }} / {{ totalPages }} </span>
+
+            <button class="page-btn" @click="nextPage" :disabled="page === totalPages">
+              Вперёд →
+            </button>
+          </div>
         </div>
       </div>
 
       <aside class="search-sidebar">
-        {{ filters.status }}
-        {{ filters.os }}
-        <div class=" dark-card">
+        <div class="dark-card">
           <StatusFliters @update:statusFliter="onStatusFilter" />
         </div>
 
@@ -87,15 +116,11 @@ export default {
         </div>
 
         <div class="dark-card">
-          <p class="sidebar-title">Протокол</p>
-          <label v-for="item in protocolItems" :key="item" class="check-row">
-            <input type="checkbox" />
-            <span>{{ item }}</span>
-          </label>
+          <p>Протокол</p>
         </div>
 
-        <div class=" dark-card">
-          <CidrFilter />
+        <div class="dark-card">
+          <CidrFilter @update:cidrFlitter="onCidrFilter" />
         </div>
       </aside>
     </div>
@@ -103,121 +128,21 @@ export default {
 </template>
 
 <style scoped>
+.header-padding {
+  padding: 0.5rem 1rem;
+}
+
 .search-layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 300px;
   gap: 1rem;
-  align-items: start;
-}
-
-.search-main {
-  min-width: 0;
-}
-
-.page-intro {
-  margin-top: 0;
 }
 
 .page-overline {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   letter-spacing: 0.08em;
-  text-transform: uppercase;
   color: #93c5fd;
-  margin-bottom: 0.5rem;
-}
-
-.page-title {
-  font-size: 2rem;
-  color: rgba(255, 255, 255, 0.96);
-  margin-bottom: 0.5rem;
-}
-
-.page-subtitle,
-.results-note {
-  color: rgba(255, 255, 255, 0.64);
-  line-height: 1.55;
-}
-
-.search-panel {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.search-fields {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
-}
-
-.field-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.45rem;
-}
-
-.field-group--wide {
-  grid-column: span 1;
-}
-
-.field-label {
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.72);
-}
-
-.field-group input {
-  width: 100%;
-  box-sizing: border-box;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.04);
-  color: rgba(255, 255, 255, 0.92);
-  padding: 0.9rem 1rem;
-  outline: none;
-}
-
-.field-group input::placeholder {
-  color: rgba(255, 255, 255, 0.35);
-}
-
-.search-actions {
-  display: flex;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-}
-
-.action-button {
-  padding: 0.8rem 1.1rem;
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(255, 255, 255, 0.05);
-  color: rgba(255, 255, 255, 0.88);
-  cursor: pointer;
-  transition: 0.18s ease;
-}
-
-.action-button:hover {
-  background: var(--button-bg-hover);
-}
-
-.action-button--primary {
-  background: linear-gradient(180deg, rgba(80, 120, 255, 0.28), rgba(80, 120, 255, 0.16));
-  border-color: rgba(80, 120, 255, 0.45);
-}
-
-.results-head,
-.device-card__head {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  align-items: flex-start;
-}
-
-.results-title {
-  font-size: 1.05rem;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.95);
-  margin-bottom: 0.3rem;
+  text-transform: uppercase;
 }
 
 .device-list {
@@ -226,123 +151,51 @@ export default {
   margin-top: 1rem;
 }
 
-.device-card {
-  padding: 1rem;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.035);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.device-name {
-  font-size: 1rem;
-  color: rgba(255, 255, 255, 0.95);
-  margin-bottom: 0.25rem;
-}
-
-.device-meta,
-.device-description {
-  color: rgba(255, 255, 255, 0.65);
-  line-height: 1.5;
-}
-
-.device-description {
-  margin: 0.75rem 0;
-}
-
-.device-badge {
-  white-space: nowrap;
-  border-radius: 999px;
-  padding: 0.4rem 0.75rem;
-  font-size: 0.75rem;
-  font-weight: 600;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(59, 130, 246, 0.14);
-  color: #bfdbfe;
-}
-
-.device-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.device-tags span {
-  border-radius: 999px;
-  padding: 0.35rem 0.7rem;
-  font-size: 0.75rem;
-  background: rgba(255, 255, 255, 0.06);
-  color: rgba(255, 255, 255, 0.72);
-}
-
 .search-sidebar {
   display: flex;
   flex-direction: column;
-  /* gap: 0.1rem; */
 }
 
-.sidebar-card {
-  margin: 0;
-}
-
-.sidebar-title {
-  font-size: 0.95rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-  color: rgba(255, 255, 255, 0.92);
-  margin-bottom: 0.9rem;
-}
-
-.sidebar-list {
-  list-style: none;
-}
-
-.sidebar-list--links li+li {
-  margin-top: 0.65rem;
-}
-
-.sidebar-list--links a {
-  color: #93c5fd;
-}
-
-.check-row {
+.pagination {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  color: rgba(255, 255, 255, 0.74);
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
 }
 
-.check-row+.check-row {
-  margin-top: 0.7rem;
+.page-btn {
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #334155;
+  background: rgba(15, 23, 42, 0.6);
+  color: #cbd5e1;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
 }
 
-.check-row input {
-  accent-color: #60a5fa;
+/* hover */
+.page-btn:hover:not(:disabled) {
+  border-color: #60a5fa;
+  color: #60a5fa;
+  background: rgba(37, 99, 235, 0.1);
 }
 
-@media (max-width: 1100px) {
-  .search-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .search-sidebar {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  }
+/* active (нажатие) */
+.page-btn:active:not(:disabled) {
+  transform: scale(0.96);
 }
 
-@media (max-width: 768px) {
-  .search-fields {
-    grid-template-columns: 1fr;
-  }
+/* disabled */
+.page-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
 
-  .page-title {
-    font-size: 1.6rem;
-  }
-
-  .results-head,
-  .device-card__head {
-    flex-direction: column;
-  }
+/* текст страницы */
+.page-info {
+  font-size: 0.8rem;
+  color: #94a3b8;
 }
 </style>

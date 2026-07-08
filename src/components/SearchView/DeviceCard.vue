@@ -1,31 +1,29 @@
 <script>
-  export default {
-    props: {
-      deviceData: Object
-    }
-  }
-
-
+export default {
+  props: {
+    deviceData: Object,
+  },
+}
 </script>
 
 <template>
   <div class="device-card">
-  <div class="device-card__icon">🖥</div>
+    <div class="device-card__icon">🖥</div>
 
-  <div>
-    <div class="device-card__title">WORKSTATION-01</div>
-    <div class="device-card__meta">
-      <span>{{ deviceData.ipv4 }}</span>
-      <span>Windows 11</span>
-      <span>00:1A:2B:3C:4D:5E</span>
+    <div>
+      <div class="device-card__title">WORKSTATION-01</div>
+      <div class="device-card__meta">
+        <span>{{ deviceData.ipv4 }}</span>
+        <span>Windows 11</span>
+        <span>00:1A:2B:3C:4D:5E</span>
+      </div>
+    </div>
+
+    <div class="device-card__side">
+      <span class="device-badge">Онлайн</span>
+      <button class="device-btn">Подробнее</button>
     </div>
   </div>
-
-  <div class="device-card__side">
-    <span class="device-badge">Онлайн</span>
-    <button class="device-btn">Подробнее</button>
-  </div>
-</div>
 </template>
 
 <style scoped>

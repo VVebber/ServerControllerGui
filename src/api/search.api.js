@@ -13,7 +13,11 @@ export async function getCidrStats() {
   return res.data
 }
 
-export async function searchDevices(filters) {
-  const res = await axios.post(`http://${API_BACKEND}/device/search`, filters)
+export async function searchDevices(filters, page, limit = 7) {
+  const res = await axios.post(`http://${API_BACKEND}/device/search`, {
+    ...filters,
+    page,
+    limit
+  })
   return res.data
 }

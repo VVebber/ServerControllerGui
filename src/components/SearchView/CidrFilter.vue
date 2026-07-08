@@ -3,6 +3,7 @@ import { getCidrStats } from "@/api/search.api"
 
   export default  {
     name: "CidrFilter",
+    emits: ['update:cidrFlitter'],
     data() {
       return {
         CidrFilter: []
@@ -18,7 +19,7 @@ import { getCidrStats } from "@/api/search.api"
   <h2>Сегмент сети</h2>
 
   <label v-for="item in CidrFilter" :key="item.id" class="check-row">
-    <input type="checkbox">
+    <input type="checkbox" @change="$emit('update:cidrFlitter', item.cidr)">
     <p> {{ item.cidr }}</p>
   </label>
 
