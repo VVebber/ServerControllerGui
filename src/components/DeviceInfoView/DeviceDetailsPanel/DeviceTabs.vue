@@ -90,7 +90,7 @@ export default {
 }
 
 .tab-row::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.12);
+  --tabs-scrollbar-thumb: rgba(255, 255, 255, 0.12);
   border-radius: 10px;
 }
 
@@ -103,11 +103,11 @@ export default {
 }
 
 .tab-btn {
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--tab-text);
   background: none;
 
   border: none;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.16);
+  border-bottom: 2px solid var(--tab-border);
 
   padding: 6px 10px;
 
@@ -117,12 +117,13 @@ export default {
 }
 
 .tab-btn:hover {
-  color: white;
-  border-bottom-color: rgba(255, 255, 255, 0.28);
+  color: var(--tab-hover-text);
+  border-bottom-color: var(--tab-hover-border);
 }
 
+
 .tab-btn.active {
-  color: white;
-  border-bottom-color: aqua;
+  color: var(--tab-active-text);
+  border-bottom-color: var(--tab-active-border);
 }
 </style>

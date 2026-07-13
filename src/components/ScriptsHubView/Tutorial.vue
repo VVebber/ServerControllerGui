@@ -50,25 +50,25 @@ export default {
 }
 
 .info-row a {
-  color: #42b983
+  color: var(--tutorial-link);
 }
 
 .protocol {
   display: flex;
   flex-direction: column;
 
-  color: white;
+  color: var(--tutorial-text);
 
   padding: 0 1rem;
   gap: 0.4rem;
   padding-bottom: 1rem;
   margin-bottom: 1rem;
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid var(--tutorial-divider);
 }
 
 .details {
   padding-left: 0.2rem;
-  color: #8690cc;
+  color: var(--tutorial-details);
   background: initial;
   border: 0;
 }
@@ -81,14 +81,14 @@ ul {
 ul li {
   margin-bottom: 0.3rem;
   padding: 0.5rem 1rem;
-  border-left: 2px solid rgba(66, 185, 131, 0.4);
-  background-color: rgba(30, 41, 59, 0.3);
+  border-left: 2px solid var(--tutorial-step-border);
+  background: var(--tutorial-step-bg);
   border-radius: 4px;
   transition: all 0.2s ease;
 }
 
 ul li:hover {
-  background-color: rgba(30, 41, 59, 0.6);
-  border-left-color: #42b983;
+  background: var(--tutorial-step-bg-hover);
+  border-left-color: var(--tutorial-step-border-hover);
 }
 </style>

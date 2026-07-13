@@ -58,14 +58,14 @@ export default {
   display: flex;
   border-radius: 10px;
   overflow: hidden;
-  background: #1b222a;
-  border: 1px solid #242c36;
+  background: var(--device-card-bg);
+  border: 1px solid var(--device-card-border);
   transition: transform .15s ease, box-shadow .15s ease;
 }
 
 .device-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, .4);
+  box-shadow: 0 6px 20px var(--device-card-hover-shadow);
 }
 
 .device-card-body {
@@ -82,7 +82,7 @@ export default {
   font-weight: 600;
   font-size: 0.95rem;
   margin-bottom: 0.5rem;
-  color: #e5e7eb;
+  color: var(--device-card-title);
 }
 
 .device-card-table {
@@ -97,11 +97,11 @@ export default {
 }
 
 .device-card-table .key {
-  color: #9ca3af;
+  color: var(--device-card-key);
 }
 
 .device-card-table .value {
-  color: #e5e7eb;
+  color: var(--device-card-value);
   font-family: monospace;
   word-break: break-all;
 }
@@ -130,9 +130,9 @@ export default {
 .device-card-actions button,
 .device-card-actions a {
   flex: 1;
-  background: #242c36;
-  border: 1px solid #2f3946;
-  color: #e5e7eb;
+  background: var(--device-card-button-bg);
+  border: 1px solid var(--device-card-button-border);
+  color: var(--device-card-button-fg);
   font-size: 0.75rem;
   padding: 4px 0;
   border-radius: 6px;
@@ -143,6 +143,6 @@ export default {
 
 .device-card-actions button:hover,
 .device-card-actions a::hover {
-  background: #2f3946;
+  background: var(--device-card-button-hover-bg);
 }
 </style>

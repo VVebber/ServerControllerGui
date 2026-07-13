@@ -1,30 +1,40 @@
 <script>
-import { getCidrStats } from "@/api/search.api"
+import { getDiskStats } from "@/api/search.api"
 
 export default {
-  name: "CidrFilter",
-  emits: ['update:cidrFlitter'],
+  name: "DiskFilter",
+
+  emits: ['update:diskFilter'],
+
   data() {
     return {
-      CidrFilter: []
+      diskFilter: []
     }
   },
+
   async mounted() {
-    this.CidrFilter = await getCidrStats();
+    this.diskFilter = await getDiskStats();
   }
 }
 </script>
 
 <template>
-  <h2 class="filter-title">Сегмент сети</h2>
+    <h2 class="filter-title">Диски</h2>
 
-  <label v-for="item in CidrFilter" :key="item.id" class="check-row">
-    <input type="checkbox" @change="$emit('update:cidrFlitter', item.cidr)">
+  <label
+    v-for="item in diskFilter"
+    :key="item.name"
+    class="check-row"
+  >
+    <input
+      type="checkbox"
+      @change="$emit('update:diskFilter', item.name)"
+    >
+
     <p class="filter-item">
-      {{ item.cidr }}
+      {{ item.name }}
     </p>
   </label>
-
 
 </template>
 

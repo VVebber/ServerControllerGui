@@ -33,18 +33,19 @@ export default {
   gap: 16px;
 }
 
+
 .network-title {
   font-size: 1rem;
   font-weight: 600;
   letter-spacing: 0.04em;
 
-  color: #9ca3af;
+  color: var(--network-title-color);
   text-transform: uppercase;
 
   margin-bottom: 12px;
   padding-left: 6px;
 
-  border-left: 3px solid #374151;
+  border-left: 3px solid var(--network-title-border);
 }
 
 .network-section {

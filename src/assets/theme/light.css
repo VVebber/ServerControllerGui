@@ -1,0 +1,232 @@
+[data-theme='light'] {
+  --header-bg: #fff;
+  --header-fg: #111;
+  --box-shadow-color: rgba(0, 0, 0, 0.2);
+
+  --section-bg: #f8fafc;
+
+  --network-title-color: #6b7280;
+  --network-title-border: #d1d5db;
+
+  --header-control-bg: #f3f4f6;
+  --header-control-fg: #111827;
+
+  --header-control-border-color: rgba(0, 0, 0, 0.15);
+  --header-control-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.08);
+
+  --header-control-hover-bg: rgba(0, 0, 0, 0.08);
+  --header-control-hover-shadow: 0 20px 10px rgba(0, 0, 0, 0.12);
+
+  --field-placeholder: #6b7280;
+  --button-bg-hover: #e5e7eb;
+
+  --header-control-hover-bg: rgba(0, 0, 0, 0.08);
+  --header-control-hover-shadow: 0 20px 10px rgba(0, 0, 0, 0.12);
+
+  --field-border-color: rgba(0, 0, 0, 0.15);
+
+  --submenu-bg: rgba(255, 255, 255, 0.8);
+  --submenu-border-color: rgba(0, 0, 0, 0.15);
+
+  --device-card-bg: #ffffff;
+  --device-card-border: #e5e7eb;
+
+  --device-card-title: #111827;
+  --device-card-key: #6b7280;
+  --device-card-value: #111827;
+
+  --device-card-hover-shadow: rgba(0, 0, 0, 0.15);
+
+  --device-card-button-bg: #f3f4f6;
+  --device-card-button-border: #d1d5db;
+  --device-card-button-fg: #111827;
+  --device-card-button-hover-bg: #e5e7eb;
+
+  --tab-bg: rgba(0, 0, 0, 0.03);
+  --tab-border: rgba(0, 0, 0, 0.08);
+  --tab-text: rgba(0, 0, 0, 0.65);
+
+  --tab-hover-bg: rgba(0, 0, 0, 0.08);
+  --tab-hover-border: rgba(0, 0, 0, 0.15);
+  --tab-hover-text: rgba(0, 0, 0, 0.9);
+
+  --tab-active-bg: linear-gradient(180deg, rgba(59, 130, 246, 0.18), rgba(59, 130, 246, 0.1));
+  --tab-active-text: #111827;
+  --tab-active-border: rgba(59, 130, 246, 0.45);
+  --tab-active-shadow: 0 0 15px rgba(59, 130, 246, 0.18);
+
+  --tutorial-text: #1f2937;
+
+  --tutorial-link: #059669;
+
+  --tutorial-details: #4f46e5;
+
+  --tutorial-divider: #d1d5db;
+
+  --tutorial-step-bg: rgba(59, 130, 246, 0.06);
+  --tutorial-step-bg-hover: rgba(59, 130, 246, 0.12);
+
+  --tutorial-step-border: rgba(5, 150, 105, 0.35);
+  --tutorial-step-border-hover: #059669;
+
+  --upload-text: #6b7280;
+  --upload-hover-text: #374151;
+
+  --upload-bg: rgba(0, 0, 0, 0.02);
+  --upload-hover-bg: rgba(0, 0, 0, 0.05);
+
+  --upload-border: #cbd5e1;
+  --upload-hover-border: #94a3b8;
+
+  --upload-button-bg: #3b82f6;
+  --upload-button-text: #ffffff;
+
+  /* Device item */
+  --device-item-bg: rgba(0, 0, 0, 0.04);
+  --device-item-border: rgba(0, 0, 0, 0.12);
+
+  /* Status */
+  --status-online-text: #15803d;
+  --status-online-border: rgba(22, 163, 74, 0.35);
+
+  --status-offline-text: #dc2626;
+  --status-offline-border: rgba(220, 38, 38, 0.35);
+
+  --status-error-text: #ca8a04;
+  --status-error-border: rgba(202, 138, 4, 0.35);
+
+  --section-title-color: rgba(0, 0, 0, 0.86);
+
+
+  --monitor-bg: #1f2937;
+  --monitor-fg: #ffffff;
+
+
+  --button-text-color: rgba(0, 0, 0, 0.82);
+
+  --button-danger-border: rgba(220, 38, 38, 0.35);
+  --button-danger-bg: rgba(220, 38, 38, 0.12);
+
+  --button-violet-border: rgba(124, 58, 237, 0.35);
+  --button-violet-bg: rgba(124, 58, 237, 0.12);
+
+  --button-info-border: rgba(37, 99, 235, 0.35);
+  --button-info-bg: rgba(37, 99, 235, 0.12);
+
+  --button-ok-border: rgba(22, 163, 74, 0.35);
+  --button-ok-bg: rgba(22, 163, 74, 0.12);
+
+  --button-hover-bg: rgba(0, 0, 0, 0.07);
+
+  --scrollbar-thumb: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0.08)
+  );
+
+  --scrollbar-thumb-hover: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.15)
+  );
+
+    /* Tabs scrollbar */
+    --tabs-scrollbar-thumb: rgba(0, 0, 0, 0.12);
+
+
+    /* Tabs */
+    --tab-text: rgba(0, 0, 0, 0.75);
+    --tab-border: rgba(0, 0, 0, 0.16);
+
+    --tab-hover-text: #111827;
+    --tab-hover-border: rgba(0, 0, 0, 0.28);
+
+    --tab-active-text: #111827;
+    --tab-active-border: #06b6d4;
+
+      /* Card */
+  --card-block-bg: rgba(0, 0, 0, 0.03);
+  --card-block-border: rgba(0, 0, 0, 0.08);
+
+  --info-box-bg: rgba(0, 0, 0, 0.04);
+  --info-box-border: rgba(0, 0, 0, 0.08);
+
+
+  /* Text */
+  --text-primary: #111827;
+  --text-secondary: #64748b;
+  --text-muted: #94a3b8;
+
+
+  /* Details */
+  --detail-row-bg: rgba(0, 0, 0, 0.04);
+  --detail-value: #1e293b;
+
+
+  /* Footer */
+  --footer-box-bg: rgba(226, 232, 240, 0.6);
+  --footer-box-border: rgba(0, 0, 0, 0.08);
+  --footer-label-color: #64748b;
+  --footer-value-color: #111827;
+
+
+  /* Badge */
+  --badge-bg: rgba(59,130,246,0.12);
+  --badge-text: #2563eb;
+  --badge-border: rgba(37,99,235,0.2);
+
+
+  /* Progress */
+  --progress-bg: rgba(0,0,0,0.08);
+  --progress-start: #16a34a;
+  --progress-end: #4ade80;
+
+  --card-header-color: #111827;
+  --footer-value-color: #111827;
+
+  /* Search */
+  --page-overline-color: #2563eb;
+
+
+  /* Sidebar scrollbar */
+  --scrollbar-bg: transparent;
+  --scrollbar-thumb: #cbd5e1;
+  --scrollbar-thumb-hover: #94a3b8;
+
+
+  /* Pagination */
+  --page-btn-border: #cbd5e1;
+  --page-btn-bg: rgba(255, 255, 255, 0.8);
+  --page-btn-text: #334155;
+
+  --page-btn-hover-border: #2563eb;
+  --page-btn-hover-text: #2563eb;
+  --page-btn-hover-bg: rgba(37, 99, 235, 0.1);
+
+  --page-info-color: #64748b;
+
+  --heading-color: #111827;
+
+  --filter-title-color: #111827;
+  --filter-item-color: rgba(17,24,39,0.74);
+
+    /* Status badge */
+    --status-bg: rgba(34, 197, 94, 0.12);
+    --status-border: rgba(0, 0, 0, 0.15);
+    --status-color: #15803d;
+
+      /* Card */
+  --card-bg-start: rgba(255, 255, 255, 0.95);
+  --card-bg-end: rgba(248, 250, 252, 0.95);
+  --card-text: rgba(15, 23, 42, 0.92);
+  --card-border: rgba(0, 0, 0, 0.08);
+  --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+
+    /* Theme preview palette */
+    --theme-preview-bg: #ffffff;
+    --theme-preview-card: #f8fafc;
+    --theme-preview-control: #f3f4f6;
+    --theme-preview-text: #111827;
+    --theme-preview-accent: #2563eb;
+
+}

@@ -21,7 +21,7 @@ export default {
   background: var(--bg-color);
   padding: var(--padding-vertical) var(--padding-horizontal);
 
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid var(--field-border-color);
   border-radius: var(--field-border-radius);
   gap: var(--field-gap);
 }

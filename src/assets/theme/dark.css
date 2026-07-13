@@ -1,0 +1,225 @@
+[data-theme='dark'] {
+  --header-bg: #0d1115;
+  --header-fg: #fff;
+  --box-shadow-color: rgba(0, 0, 0, 0.6);
+
+  --section-bg: #151a20;
+
+  --network-title-color: #9ca3af;
+  --network-title-border: #374151;
+
+  --header-control-bg: #1b1d22;
+  --header-control-fg: #ffffff;
+
+  --header-control-border-color: rgba(255, 255, 255, 0.15);
+  --header-control-shadow: 2px 2px 2px 1px rgba(255, 250, 255, 0.05);
+
+  --header-control-hover-bg: rgba(255, 255, 255, 0.12);
+  --header-control-hover-shadow: 0 20px 10px rgba(0, 0, 0, 0.05);
+
+  --field-placeholder: #888888;
+  --button-bg-hover: #293449;
+
+  --header-control-hover-bg: rgba(255, 255, 255, 0.12);
+  --header-control-hover-shadow: 0 20px 10px rgba(0, 0, 0, 0.05);
+
+  --field-border-color: rgba(255, 255, 255, 0.15);
+
+  --submenu-bg: rgba(30, 41, 59, 0.4);
+  --submenu-border-color: rgba(255, 255, 255, 0.15);
+
+  --device-card-bg: #1b222a;
+  --device-card-border: #242c36;
+
+  --device-card-title: #e5e7eb;
+  --device-card-key: #9ca3af;
+  --device-card-value: #e5e7eb;
+
+  --device-card-hover-shadow: rgba(0, 0, 0, 0.4);
+
+  --device-card-button-bg: #242c36;
+  --device-card-button-border: #2f3946;
+  --device-card-button-fg: #e5e7eb;
+  --device-card-button-hover-bg: #2f3946;
+
+  --tab-bg: rgba(255, 255, 255, 0.03);
+  --tab-border: rgba(255, 255, 255, 0.08);
+  --tab-text: rgba(255, 255, 255, 0.65);
+
+  --tab-hover-bg: rgba(255, 255, 255, 0.08);
+  --tab-hover-border: rgba(255, 255, 255, 0.15);
+  --tab-hover-text: rgba(255, 255, 255, 0.9);
+
+  --tab-active-bg: linear-gradient(180deg, rgba(80, 120, 255, 0.25), rgba(80, 120, 255, 0.15));
+  --tab-active-text: #ffffff;
+  --tab-active-border: rgba(80, 120, 255, 0.5);
+  --tab-active-shadow: 0 0 15px rgba(80, 120, 255, 0.25);
+
+  --tutorial-text: #ffffff;
+
+  --tutorial-link: #42b983;
+
+  --tutorial-details: #8690cc;
+
+  --tutorial-divider: #808080;
+
+  --tutorial-step-bg: rgba(30, 41, 59, 0.3);
+  --tutorial-step-bg-hover: rgba(30, 41, 59, 0.6);
+
+  --tutorial-step-border: rgba(66, 185, 131, 0.4);
+  --tutorial-step-border-hover: #42b983;
+
+  --upload-text: #8e9096;
+  --upload-hover-text: #91968e;
+
+  --upload-bg: rgba(255, 255, 255, 0.02);
+  --upload-hover-bg: rgba(255, 255, 255, 0.1);
+
+  --upload-border: rgb(30, 41, 59);
+  --upload-hover-border: rgba(30, 41, 59, 0.3);
+
+  --upload-button-bg: #353f5a;
+  --upload-button-text: #ffffff;
+
+  /* Device item */
+  --device-item-bg: rgba(255, 255, 255, 0.06);
+  --device-item-border: rgba(255, 255, 255, 0.08);
+
+  /* Status */
+  --status-online-text: #86efac;
+  --status-online-border: rgba(34, 197, 94, 0.25);
+
+  --status-offline-text: #fca5a5;
+  --status-offline-border: rgba(239, 68, 68, 0.25);
+
+  --status-error-text: #fde68a;
+  --status-error-border: rgba(234, 179, 8, 0.25);
+
+  /* Section */
+  --section-title-color: rgba(255, 255, 255, 0.86);
+
+  /* Monitor */
+  --monitor-bg: #ffffff;
+  --monitor-fg: #000000;
+
+  /* Buttons */
+  --button-text-color: rgba(255, 255, 255, 0.82);
+
+  --button-danger-border: rgba(255, 92, 108, 0.35);
+  --button-danger-bg: rgba(255, 92, 108, 0.12);
+
+  --button-violet-border: rgba(179, 107, 255, 0.35);
+  --button-violet-bg: rgba(179, 107, 255, 0.12);
+
+  --button-info-border: rgba(74, 163, 255, 0.35);
+  --button-info-bg: rgba(74, 163, 255, 0.12);
+
+  --button-ok-border: rgba(39, 194, 122, 0.35);
+  --button-ok-bg: rgba(39, 194, 122, 0.12);
+
+  --button-hover-bg: rgba(255, 255, 255, 0.07);
+
+  --scrollbar-thumb: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.08));
+
+  --scrollbar-thumb-hover: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0.15)
+  );
+
+  /* Tabs scrollbar */
+  --tabs-scrollbar-thumb: rgba(255, 255, 255, 0.12);
+
+  /* Tabs */
+  --tab-text: rgba(255, 255, 255, 0.85);
+  --tab-border: rgba(255, 255, 255, 0.16);
+
+  --tab-hover-text: #ffffff;
+  --tab-hover-border: rgba(255, 255, 255, 0.28);
+
+  --tab-active-text: #ffffff;
+  --tab-active-border: aqua;
+
+  /* Card */
+  --card-block-bg: rgba(0, 0, 0, 0.18);
+  --card-block-border: rgba(255, 255, 255, 0.06);
+
+  --info-box-bg: rgba(255, 255, 255, 0.06);
+  --info-box-border: rgba(255, 255, 255, 0.08);
+
+  /* Text */
+  --text-primary: #ffffff;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+
+  /* Details */
+  --detail-row-bg: rgba(255, 255, 255, 0.05);
+  --detail-value: #f8fafc;
+
+  /* Footer */
+  --footer-box-bg: rgba(15, 23, 42, 0.45);
+  --footer-box-border: rgba(255, 255, 255, 0.08);
+  --footer-label-color: #94a3b8;
+  --footer-value-color: #ffffff;
+
+  /* Badge */
+  --badge-bg: rgba(59, 130, 246, 0.15);
+  --badge-text: #93c5fd;
+  --badge-border: rgba(147, 197, 253, 0.2);
+
+  /* Progress */
+  --progress-bg: rgba(255, 255, 255, 0.08);
+  --progress-start: #22c55e;
+  --progress-end: #4ade80;
+
+  --card-header-color: #ffffff;
+  --footer-value-color: #ffffff;
+
+  /* Search */
+  --page-overline-color: #93c5fd;
+
+  /* Sidebar scrollbar */
+  --scrollbar-bg: transparent;
+  --scrollbar-thumb: #334155;
+  --scrollbar-thumb-hover: #475569;
+
+  /* Pagination */
+  --page-btn-border: #334155;
+  --page-btn-bg: rgba(15, 23, 42, 0.6);
+  --page-btn-text: #cbd5e1;
+
+  --page-btn-hover-border: #60a5fa;
+  --page-btn-hover-text: #60a5fa;
+  --page-btn-hover-bg: rgba(37, 99, 235, 0.1);
+
+  --page-info-color: #94a3b8;
+
+  --heading-color: #ffffff;
+
+  --filter-title-color: #ffffff;
+  --filter-item-color: rgba(255, 255, 255, 0.74);
+
+  /* Status badge */
+  --status-bg: rgba(34, 197, 94, 0.15);
+  --status-border: rgba(255, 255, 255, 0.15);
+  --status-color: #86efac;
+
+  /* Card */
+  --card-bg-start: rgba(255, 255, 255, 0.06);
+  --card-bg-end: rgba(255, 255, 255, 0.03);
+  --card-text: rgba(255, 255, 255, 0.92);
+  --card-border: rgba(255, 255, 255, 0.08);
+  --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+
+
+  /* Theme preview palette */
+  --theme-preview-bg: #0d1115;          /* общий фон */
+  --theme-preview-card: #1b222a;        /* карточки */
+  --theme-preview-control: #1b1d22;     /* кнопки/header controls */
+  --theme-preview-text: #ffffff;        /* текст */
+  --theme-preview-accent: #4a8cff;      /* акцент */
+
+  --theme-preview-text: #ffffff;
+  --theme-preview-secondary: #94a3b8;
+
+}

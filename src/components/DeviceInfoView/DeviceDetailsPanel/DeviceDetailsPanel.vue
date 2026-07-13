@@ -116,17 +116,15 @@ export default {
 }
 
 .tab-content::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg,
-      rgba(255, 255, 255, 0.15),
-      rgba(255, 255, 255, 0.08));
+  background: var(--scrollbar-thumb);
+
   border-radius: 10px;
   backdrop-filter: blur(6px);
   transition: all 0.2s ease;
 }
 
 .tab-content::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg,
-      rgba(255, 255, 255, 0.3),
-      rgba(255, 255, 255, 0.15));
+  background: var(--scrollbar-thumb-hover);
+
 }
 </style>

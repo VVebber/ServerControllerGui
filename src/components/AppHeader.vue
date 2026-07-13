@@ -10,7 +10,7 @@ export default {
 </script>
 
 <template>
-  <header>
+  <header data-theme="dar">
     <div class="flex-center header-gap">
       <HeaderDropdown />
 
@@ -84,9 +84,9 @@ export default {
 
 .header-logout-button:hover,
 .header-button:hover {
-  background: rgba(255, 255, 255, 0.12);
+  background: var(--header-control-hover-bg);
   transform: translateY(-1px);
-  box-shadow: 0 20px 10px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--header-control-hover-shadow);
 }
 
   @media (max-width: 768px) {

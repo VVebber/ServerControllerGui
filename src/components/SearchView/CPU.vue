@@ -1,30 +1,41 @@
 <script>
-import { getCidrStats } from "@/api/search.api"
+import { getCpuStats } from "@/api/search.api"
 
 export default {
-  name: "CidrFilter",
-  emits: ['update:cidrFlitter'],
+  name: "CpuFilter",
+
+  emits: ['update:cpuFilter'],
+
   data() {
     return {
-      CidrFilter: []
+      cpuStats: []
     }
   },
+
   async mounted() {
-    this.CidrFilter = await getCidrStats();
+    this.cpuStats = await getCpuStats();
   }
 }
 </script>
 
 <template>
-  <h2 class="filter-title">Сегмент сети</h2>
+    <h2 class="filter-title">Процессор</h2>
 
-  <label v-for="item in CidrFilter" :key="item.id" class="check-row">
-    <input type="checkbox" @change="$emit('update:cidrFlitter', item.cidr)">
+  <label
+    v-for="item in cpuStats"
+    :key="item.name"
+    class="check-row"
+  >
+    <input
+      type="checkbox"
+      @change="$emit('update:cpuFilter', item.name)"
+    >
+
     <p class="filter-item">
-      {{ item.cidr }}
+      {{ item.name }}
+      <span>({{ item.count }})</span>
     </p>
   </label>
-
 
 </template>
 

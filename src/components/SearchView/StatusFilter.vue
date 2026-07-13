@@ -18,38 +18,38 @@ export default {
 </script>
 
 <template>
-  <h2 class="sidebar-title">Статус</h2>
+  <h2 class="filter-title">Статус</h2>
 
   <label v-for="item in StatusFilter" :key="item" class="check-row">
     <input type="checkbox" @change="$emit('update:statusFliter', item)">
-    <p> {{ item }}</p>
+    <p class="filter-item">
+      {{ item }}
+    </p>
   </label>
 
 
 </template>
 
 <style scoped>
-.sidebar-title {
-  font-size: 0.95rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-  color: rgba(255, 255, 255, 0.92);
-  margin-bottom: 0.9rem;
+.filter-title {
+  color: var(--filter-title-color);
 }
+
 
 .check-row {
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  color: rgba(255, 255, 255, 0.74);
 }
 
-.check-row p {
+
+.filter-item {
+  color: var(--filter-item-color);
+
   max-width: max-content;
 
   white-space: nowrap;
   overflow: hidden;
-  /* text-overflow: ellipsis; */
+  text-overflow: ellipsis;
 }
 </style>

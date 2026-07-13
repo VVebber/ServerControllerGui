@@ -116,11 +116,11 @@ export default {
 
   padding: 0.6rem 1rem;
 
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--tab-bg);
+  border: 1px solid var(--tab-border);
   border-radius: 10px;
 
-  color: rgba(255, 255, 255, 0.65);
+  color: var(--tab-text);
   font-weight: 500;
 
   cursor: pointer;
@@ -129,15 +129,32 @@ export default {
 }
 
 .tab-list button:hover {
-  background: rgba(255, 255, 255, 0.08);
-  color: rgba(255, 255, 255, 0.9);
-  border-color: rgba(255, 255, 255, 0.15);
+  background: var(--tab-hover-bg);
+  color: var(--tab-hover-text);
+  border-color: var(--tab-hover-border);
 }
 
 .tab-list button.active {
-  background: linear-gradient(180deg, rgba(80, 120, 255, 0.25), rgba(80, 120, 255, 0.15));
-  color: white;
-  border-color: rgba(80, 120, 255, 0.5);
-  box-shadow: 0 0 15px rgba(80, 120, 255, 0.25);
+  background: var(--tab-active-bg);
+  color: var(--tab-active-text);
+  border-color: var(--tab-active-border);
+  box-shadow: var(--tab-active-shadow);
+}
+
+.questions {
+  padding: 1.5rem;
+}
+
+.questions h1 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--tab-text);
+}
+
+.question-item {
+  padding: 1rem;
+
+  color: var(--tab-text);
+
 }
 </style>

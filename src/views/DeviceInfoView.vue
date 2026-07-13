@@ -51,13 +51,6 @@ export default {
         <DeviceDetailsPanel :ipv4="ip" :locales="local.DeviceDetailsPanel" />
       </div>
     </div>
-
-    <div class="dark-card">
-      <button>Процеесы</button>
-      <button>Лого</button>
-      <button>Сеть</button>
-    </div>
-
   </section>
 </template>
 
@@ -74,9 +67,9 @@ export default {
 
 .device-item {
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, .08);
+  border: 1px solid var(--device-item-border);
 
-  background: rgba(255, 255, 255, .06);
+  background: var(--device-item-bg);
 
   padding: 0.5rem 2rem;
 
@@ -109,34 +102,21 @@ export default {
   padding: 5px 10px;
 }
 
-.device-item {
-  border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, .08);
-
-  background: rgba(255, 255, 255, .06);
-
-  padding: 0.5rem 2rem;
-
-  font-size: 14px;
-}
-
 .status-online {
-  color: #86efac;
-  /* background: rgba(34, 197, 94, 0.12); */
-  border: 1px solid rgba(34, 197, 94, 0.25);
+  color: var(--status-online-text);
+  border: 1px solid var(--status-online-border);
 }
+
 
 .status-offline {
-  color: #fca5a5;
-  /* background: rgba(239, 68, 68, 0.12); */
-  border: 1px solid rgba(239, 68, 68, 0.25);
+  color: var(--status-offline-text);
+  border: 1px solid var(--status-offline-border);
 }
 
-/* error */
+
 .status-error {
-  color: #fde68a;
-  /* background: rgba(234, 179, 8, 0.12); */
-  border: 1px solid rgba(234, 179, 8, 0.25);
+  color: var(--status-error-text);
+  border: 1px solid var(--status-error-border);
 }
 
 </style>
